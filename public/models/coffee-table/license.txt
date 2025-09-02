@@ -1,0 +1,11 @@
+Model Information:
+* title:	Coffee Table
+* source:	https://sketchfab.com/3d-models/coffee-table-ba197f0c7dc147a78005c100a8c67cde
+* author:	crowempires (https://sketchfab.com/crowempires)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Coffee Table" (https://sketchfab.com/3d-models/coffee-table-ba197f0c7dc147a78005c100a8c67cde) by crowempires (https://sketchfab.com/crowempires) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

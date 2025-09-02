@@ -1,0 +1,11 @@
+Model Information:
+* title:	Portable Bluetooth Speaker (MUZEN) (FREE)
+* source:	https://sketchfab.com/3d-models/portable-bluetooth-speaker-muzen-free-2c89bba6e87b4e1a9df4723c2033c108
+* author:	___konstantsin___ (https://sketchfab.com/___konstantsin___)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Portable Bluetooth Speaker (MUZEN) (FREE)" (https://sketchfab.com/3d-models/portable-bluetooth-speaker-muzen-free-2c89bba6e87b4e1a9df4723c2033c108) by ___konstantsin___ (https://sketchfab.com/___konstantsin___) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

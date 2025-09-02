@@ -1,0 +1,11 @@
+Model Information:
+* title:	Emilia Capitonné Armchair
+* source:	https://sketchfab.com/3d-models/emilia-capitonne-armchair-a2bdcdeb79f34c40b68b15c364bb3bf7
+* author:	BertO (https://sketchfab.com/bertosalotti)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Emilia Capitonné Armchair" (https://sketchfab.com/3d-models/emilia-capitonne-armchair-a2bdcdeb79f34c40b68b15c364bb3bf7) by BertO (https://sketchfab.com/bertosalotti) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
