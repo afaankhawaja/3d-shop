@@ -1,49 +1,61 @@
-import {
-  Circle,
-  Html,
-  OrbitControls,
-  Stats,
-  useProgress,
-} from "@react-three/drei";
+import { Html, OrbitControls, useProgress } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+
+interface Props {
+  modelUrl: string;
+}
 
 function Loader() {
   const { progress } = useProgress();
-  return <Html center>{progress} % loaded</Html>;
+  return <Html center>{progress.toFixed(0)} % loaded</Html>;
 }
 
-const Scene: React.FC = () => {
-  const gltf = useLoader(GLTFLoader, "/models/leather-jacket/scene.gltf");
+const Scene = ({ modelUrl }: Props) => {
+  const gltf = useLoader(GLTFLoader, modelUrl);
 
   return (
-    <section className="w-screen h-screen">
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        flex: 1,
+        position: "relative",
+        backgroundColor: "#f8f9fa",
+      }}
+    >
       <Suspense fallback={<Loader />}>
         <Canvas
-          className="h-60 w-96"
-          camera={{ position: [-0.5, 1, 2] }}
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "block",
+          }}
+          camera={{ fov: 50 }}
           shadows
         >
+          <ambientLight intensity={0.4} />
           <directionalLight
             position={[-1.3, 6.0, 4.4]}
             castShadow
-            intensity={Math.PI * 1}
+            intensity={1}
           />
           <primitive
             object={gltf.scene}
-            position={[0, 1, 0]}
-            children-0-castShadow
+            position={[0, -5, 0]}
+            scale={[1, 1, 1]}
           />
-          <Circle args={[10]} rotation-x={-Math.PI / 2} receiveShadow>
-            <meshStandardMaterial />
-          </Circle>
-          <OrbitControls target={[0, 1, 0]} />
-          <axesHelper args={[5]} />
-          <Stats />
+
+          <OrbitControls
+            target={[0, 0, 0]}
+            enablePan={true}
+            enableZoom={true}
+            enableRotate={true}
+          />
         </Canvas>
       </Suspense>
-    </section>
+    </div>
   );
 };
 

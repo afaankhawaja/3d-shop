@@ -1,25 +1,53 @@
 import ProductCard from "./ProductCard";
 import { products } from ".././constants/products";
+import CustomModal from "./CustomModel"; // Import our custom modal
+import { useEffect, useState } from "react";
+import Scene from "./Scene";
 
 const ProductListing = () => {
+  const [open, setOpen] = useState(false);
+  const [modelUrl, setModelUrl] = useState("");
+
+  useEffect(() => {
+    console.log("modelUrl", modelUrl);
+  }, [modelUrl]);
+
   return (
-    <section className="bg-[#E4E0E1] py-12 sm:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#493628]">
-            Our Latest Products
-          </h2>
-          <p className="mt-4 text-lg text-[#AB886D]">
-            Discover quality craftsmanship and unique items for every category.
-          </p>
+    <>
+      <section className="bg-[#E4E0E1] py-12 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#493628]">
+              Our Latest Products
+            </h2>
+            <p className="mt-4 text-lg text-[#AB886D]">
+              Discover quality craftsmanship and unique items for every
+              category.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((product) => (
+              <ProductCard
+                setOpen={setOpen}
+                setModelUrl={setModelUrl}
+                key={product.id}
+                product={product}
+              />
+            ))}
+          </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+
+      <CustomModal
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        title="3D Model Viewer"
+        width="1200px"
+        height="700px"
+      >
+        {modelUrl && <Scene modelUrl={modelUrl} />}
+      </CustomModal>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 
-interface Products {
+interface Product {
   id: number;
   name: string;
   description: string;
@@ -8,11 +8,27 @@ interface Products {
   price: number;
   rating: number;
   imageUrl: string;
+  modelUrl: string;
 }
 
-const ProductCard = ({ product }: { product: Products }) => {
+interface Props {
+  product: Product;
+  setModelUrl: (value: string) => void;
+  key: number;
+  setOpen: (value: boolean) => void;
+}
+
+const ProductCard = ({ product, setModelUrl, key, setOpen }: Props) => {
+  const handleClick = () => {
+    setModelUrl(product.modelUrl);
+    setOpen(true);
+  };
   return (
-    <div className="group relative bg-[#D6C0B3] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+    <div
+      onClick={handleClick}
+      key={key}
+      className="group relative bg-[#D6C0B3] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+    >
       <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden">
         <img
           src={product.imageUrl}

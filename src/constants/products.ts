@@ -13,6 +13,7 @@ export const products = [
     imageUrl: headphone,
     price: 249.99,
     rating: 4.8,
+    modelUrl: "/models/leather-jacket/scene.gltf",
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ export const products = [
     imageUrl: "https://images.unsplash.com/photo-1593784993175-9e67d3e09886",
     price: 699.0,
     rating: 4.5,
+    modelUrl: "/models/leather-jacket/scene.gltf",
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ export const products = [
     imageUrl: speaker,
     price: 79.5,
     rating: 4.6,
+    modelUrl: "/models/leather-jacket/scene.gltf",
   },
   {
     id: 4,
@@ -43,6 +46,7 @@ export const products = [
     imageUrl: jacket,
     price: 189.99,
     rating: 4.9,
+    modelUrl: "/models/leather-jacket/scene.gltf",
   },
   {
     id: 5,
@@ -53,6 +57,7 @@ export const products = [
     imageUrl: tshirt,
     price: 25.0,
     rating: 4.7,
+    modelUrl: "/models/leather-jacket/scene.gltf",
   },
   {
     id: 6,
@@ -63,6 +68,7 @@ export const products = [
     imageUrl: "https://images.unsplash.com/photo-1560942548-d3c50970a253",
     price: 65.0,
     rating: 4.4,
+    modelUrl: "/models/leather-jacket/scene.gltf",
   },
   {
     id: 7,
@@ -73,6 +79,7 @@ export const products = [
     imageUrl: "https://images.unsplash.com/photo-1586521995584-353d2673f45f",
     price: 399.0,
     rating: 4.8,
+    modelUrl: "/models/leather-jacket/scene.gltf",
   },
   {
     id: 8,
@@ -83,6 +90,7 @@ export const products = [
     imageUrl: "https://images.unsplash.com/photo-1560965373-c820b1e1d003",
     price: 150.0,
     rating: 4.5,
+    modelUrl: "/models/leather-jacket/scene.gltf",
   },
   {
     id: 9,
@@ -93,5 +101,6 @@ export const products = [
     imageUrl: "https://images.unsplash.com/photo-1510103723321-b84784a0d879",
     price: 220.0,
     rating: 4.7,
+    modelUrl: "/models/leather-jacket/scene.gltf",
   },
 ];
