@@ -1,16 +1,17 @@
 import ProductCard from "./ProductCard";
 import { products } from ".././constants/products";
-import CustomModal from "./CustomModel"; // Import our custom modal
-import { useEffect, useState } from "react";
+import CustomModal from "./CustomModel";
+import { useState } from "react";
 import Scene from "./Scene";
 
 const ProductListing = () => {
   const [open, setOpen] = useState(false);
   const [modelUrl, setModelUrl] = useState("");
 
-  useEffect(() => {
-    console.log("modelUrl", modelUrl);
-  }, [modelUrl]);
+  const handleModalClose = () => {
+    setOpen(false);
+    setModelUrl("");
+  };
 
   return (
     <>
@@ -40,7 +41,7 @@ const ProductListing = () => {
 
       <CustomModal
         isOpen={open}
-        onClose={() => setOpen(false)}
+        onClose={() => handleModalClose()}
         title="3D Model Viewer"
         width="1200px"
         height="700px"
