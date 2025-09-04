@@ -3,6 +3,7 @@ import { products } from ".././constants/products";
 import CustomModal from "./CustomModel";
 import { useState } from "react";
 import Scene from "./Scene";
+import ARModel from "./ARModel";
 
 const ProductListing = () => {
   const [open, setOpen] = useState(false);
@@ -48,6 +49,7 @@ const ProductListing = () => {
       >
         {modelUrl && <Scene modelUrl={modelUrl} />}
       </CustomModal>
+      <ARModel modelUrl={"/models/t-shirt/scene.gltf"} />
     </>
   );
 };
