@@ -58,16 +58,16 @@ const Scene = ({ modelUrl }: Props) => {
         backgroundColor: "#f8f9fa",
       }}
     >
-      <Suspense fallback={<Loader />}>
-        <Canvas
-          style={{
-            width: "100%",
-            height: "100%",
-            display: "block",
-          }}
-          camera={{ fov: 50, position: [0, 0, 5] }}
-          shadows
-        >
+      <Canvas
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "block",
+        }}
+        camera={{ fov: 50, position: [0, 0, 5] }}
+        shadows
+      >
+        <Suspense fallback={<Loader />}>
           <ambientLight intensity={0.4} />
           <directionalLight
             position={[-1.3, 6.0, 4.4]}
@@ -82,8 +82,8 @@ const Scene = ({ modelUrl }: Props) => {
             enableZoom={true}
             enableRotate={true}
           />
-        </Canvas>
-      </Suspense>
+        </Suspense>
+      </Canvas>
     </div>
   );
 };

@@ -3,14 +3,20 @@ import { products } from ".././constants/products";
 import CustomModal from "./CustomModel";
 import { useState } from "react";
 import Scene from "./Scene";
-import ARModel from "./ARModel";
+import ARScene from "./ARScene";
 
 const ProductListing = () => {
   const [open, setOpen] = useState(false);
+  const [openAR, setOpenAR] = useState(false);
   const [modelUrl, setModelUrl] = useState("");
 
   const handleModalClose = () => {
     setOpen(false);
+    setModelUrl("");
+  };
+
+  const handleARModalClose = () => {
+    setOpenAR(false);
     setModelUrl("");
   };
 
@@ -31,6 +37,7 @@ const ProductListing = () => {
             {products.map((product) => (
               <ProductCard
                 setOpen={setOpen}
+                setOpenAR={setOpenAR}
                 setModelUrl={setModelUrl}
                 key={product.id}
                 product={product}
@@ -49,7 +56,16 @@ const ProductListing = () => {
       >
         {modelUrl && <Scene modelUrl={modelUrl} />}
       </CustomModal>
-      <ARModel modelUrl={"/models/t-shirt/scene.gltf"} />
+
+      <CustomModal
+        isOpen={openAR}
+        onClose={() => handleARModalClose()}
+        title="AR Model Viewer"
+        width="1200px"
+        height="700px"
+      >
+        {modelUrl && <ARScene modelUrl={modelUrl} />}
+      </CustomModal>
     </>
   );
 };

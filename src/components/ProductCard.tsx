@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { Box, HandPlatter, Star } from "lucide-react";
 
 interface Product {
   id: number;
@@ -16,16 +16,27 @@ interface Props {
   setModelUrl: (value: string) => void;
   key: number;
   setOpen: (value: boolean) => void;
+  setOpenAR: (value: boolean) => void;
 }
 
-const ProductCard = ({ product, setModelUrl, key, setOpen }: Props) => {
-  const handleClick = () => {
+const ProductCard = ({
+  product,
+  setModelUrl,
+  key,
+  setOpen,
+  setOpenAR,
+}: Props) => {
+  const renderModel = () => {
     setModelUrl(product.modelUrl);
     setOpen(true);
   };
+
+  const renderArView = () => {
+    setModelUrl(product.modelUrl);
+    setOpenAR(true);
+  };
   return (
     <div
-      onClick={handleClick}
       key={key}
       className="group relative bg-[#D6C0B3] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
     >
@@ -59,9 +70,18 @@ const ProductCard = ({ product, setModelUrl, key, setOpen }: Props) => {
         </p>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 p-4 transition-all duration-300 transform translate-y-full group-hover:translate-y-0">
-        <button className="w-full bg-[#493628] text-[#E4E0E1] py-3 rounded-xl font-semibold hover:bg-[#AB886D] hover:shadow-xl transition-colors duration-200">
-          Add to Cart
+      <div className="lg:absolute inset-x-0 bottom-0 p-4 transition-all duration-300 transform lg:translate-y-full group-hover:translate-y-0">
+        <button
+          onClick={renderModel}
+          className="w-full flex justify-center gap-2 bg-[#493628] text-[#E4E0E1] py-3 rounded-xl font-semibold hover:bg-[#AB886D] hover:shadow-xl transition-colors duration-200"
+        >
+          <span>View 3D</span> <Box />
+        </button>
+        <button
+          onClick={renderArView}
+          className="w-full flex justify-center gap-2 mt-2 bg-[#493628] text-[#E4E0E1] py-3 rounded-xl font-semibold hover:bg-[#AB886D] hover:shadow-xl transition-colors duration-200"
+        >
+          <span>Open AR</span> <HandPlatter />
         </button>
       </div>
     </div>
