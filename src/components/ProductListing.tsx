@@ -3,7 +3,7 @@ import { products } from ".././constants/products";
 import CustomModal from "./CustomModel";
 import { useState } from "react";
 import Scene from "./Scene";
-import ARScene from "./ARScene";
+import ModelViewer from "./ModelViewer";
 
 const ProductListing = () => {
   const [open, setOpen] = useState(false);
@@ -64,7 +64,7 @@ const ProductListing = () => {
         width="1200px"
         height="700px"
       >
-        {modelUrl && <ARScene modelUrl={modelUrl} />}
+        {modelUrl && <ModelViewer modelUrl={modelUrl} />}
       </CustomModal>
     </>
   );
