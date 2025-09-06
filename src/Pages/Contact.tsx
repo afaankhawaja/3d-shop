@@ -36,7 +36,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-[#E4E0E1] min-h-screen py-16 px-4 sm:px-6 lg:px-8 font-sans text-[#493628]">
+    <div className="bg-[#E4E0E1] min-h-screen py-20 px-4 sm:px-6 lg:px-8 font-sans text-[#493628]">
       <div className="max-w-6xl mx-auto rounded-3xl bg-[#D6C0B3]/40 backdrop-blur-sm p-8 md:p-12 shadow-2xl">
         <div className="md:grid md:grid-cols-2 md:gap-12 lg:gap-24 items-center">
           <div className="space-y-8 mb-12 md:mb-0">
