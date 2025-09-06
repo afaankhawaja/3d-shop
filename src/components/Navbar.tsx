@@ -5,7 +5,7 @@ const navItems = [
   { name: "Home", href: "#" },
   { name: "Products", href: "#" },
   { name: "Collections", href: "#" },
-  { name: "About", href: "#" },
+  { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -25,7 +25,11 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? `${!isMenuOpen ? "bg-[#AB886D]/70 shadow-lg backdrop-blur-md" : "bg-transparent"}   `
+          ? `${
+              !isMenuOpen
+                ? "bg-[#AB886D]/70 shadow-lg backdrop-blur-md"
+                : "bg-transparent"
+            }   `
           : "bg-transparent"
       }`}
     >
