@@ -71,21 +71,21 @@ const Contact = () => {
               <a
                 href="#"
                 aria-label="Instagram"
-                className="text-[#493628] hover:text-[#AB886D] transition-colors duration-200"
+                className="text-[#493628] hover:text-[#FD1D1D] transition-colors duration-200"
               >
                 <Instagram className="w-8 h-8" />
               </a>
               <a
                 href="#"
                 aria-label="Facebook"
-                className="text-[#493628] hover:text-[#AB886D] transition-colors duration-200"
+                className="text-[#493628] hover:text-[#4267B2] transition-colors duration-200"
               >
                 <Facebook className="w-8 h-8" />
               </a>
               <a
                 href="#"
                 aria-label="Twitter"
-                className="text-[#493628] hover:text-[#AB886D] transition-colors duration-200"
+                className="text-[#493628] hover:text-[#1DA1F2] transition-colors duration-200"
               >
                 <Twitter className="w-8 h-8" />
               </a>
