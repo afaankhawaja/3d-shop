@@ -4,7 +4,6 @@ import { Menu, X, Search, ShoppingCart, User, Box } from "lucide-react";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Products", href: "/products" },
-  { name: "Collections", href: "#" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
@@ -49,7 +48,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-[#493628] hover:text-[#D6C0B3] transition-colors duration-200 font-medium"
+                className="text-[#493628] hover:text-[#D6C0B3] transition-colors duration-200 font-semibold tracking-wide text-[14px]"
               >
                 {item.name}
               </a>
