@@ -107,7 +107,7 @@ const Contact = () => {
                   id="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-xl border-none bg-[#E4E0E1] text-[#493628] focus:ring-[#AB886D] focus:border-[#AB886D] transition-colors"
+                  className="mt-1 block w-full px-3 py-1 rounded-lg border-none bg-[#E4E0E1] text-[#493628] focus:outline-[#AB886D]  transition-colors"
                   placeholder="Your Name"
                   required
                 />
@@ -126,7 +126,7 @@ const Contact = () => {
                   id="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-xl border-none bg-[#E4E0E1] text-[#493628] focus:ring-[#AB886D] focus:border-[#AB886D] transition-colors"
+                  className="mt-1 block w-full px-3 py-1 rounded-lg border-none bg-[#E4E0E1] text-[#493628] focus:outline-[#AB886D] transition-colors"
                   placeholder="you@example.com"
                   required
                 />
@@ -145,7 +145,7 @@ const Contact = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-xl border-none bg-[#E4E0E1] text-[#493628] focus:ring-[#AB886D] focus:border-[#AB886D] transition-colors"
+                  className="mt-1 block w-full px-3 py-1 rounded-lg border-none bg-[#E4E0E1] text-[#493628] focus:outline-[#AB886D] transition-colors"
                   placeholder="Tell us about your project..."
                   required
                 ></textarea>
