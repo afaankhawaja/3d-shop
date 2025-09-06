@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Menu, X, Search, ShoppingCart, User, Box } from "lucide-react";
 
 const navItems = [
-  { name: "Home", href: "#" },
-  { name: "Products", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "Products", href: "/products" },
   { name: "Collections", href: "#" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
