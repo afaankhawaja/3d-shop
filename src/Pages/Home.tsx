@@ -1,6 +1,6 @@
-import Navbar from "./Navbar";
-import Hero from "./Hero";
-import ProductListing from "./ProductListing";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import ProductListing from "../components/ProductListing";
 
 const Home = () => {
   return (
