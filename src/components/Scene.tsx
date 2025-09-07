@@ -60,21 +60,28 @@ const Scene = ({ modelUrl }: Props) => {
           </Suspense>
         </Canvas>
       </div>
-      <div className="absolute z-50 pl-3 overflow-scroll max-h-[300px] my-auto content-center justify-center mt-[60px] space-y-5">
-        {materialNames.map((name) => (
-          <div
-            key={name}
-            className="border-1 border-b-blue-100 py-3 rounded-xl max-w-32 max-h-20 flex flex-col gap-4"
-          >
-            <label className="text-center text-[13px]">{name}</label>
-            <input
-              type="color"
-              className="max-w-32 h-20"
-              value={colorMap[name] || "#000343"}
-              onChange={(e) => handleColorChange(name, e.target.value)}
-            />
-          </div>
-        ))}
+      <div className="absolute  bottom-3 left-0 right-0 z-50 px-3">
+        <div className="flex space-x-4  overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-[#AB886D] scrollbar-track-[#E4E0E1]">
+          {materialNames.map((name) => (
+            <div
+              key={name}
+              className="bg-[#E4E0E1] shadow-md rounded-xl flex-shrink-0 w-28 p-2 flex flex-col items-center gap-2 hover:shadow-lg transition"
+            >
+              <label
+                className="text-center text-xs font-medium text-[#493628] truncate w-full"
+                title={name}
+              >
+                {name}
+              </label>
+              <input
+                type="color"
+                className="w-full h-8 rounded cursor-pointer border border-[#AB886D]"
+                value={colorMap[name] || "#000343"}
+                onChange={(e) => handleColorChange(name, e.target.value)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
