@@ -15,7 +15,7 @@ function Loader() {
 const Scene = ({ modelUrl }: Props) => {
   const [materialNames, setMaterialNames] = useState<string[]>([]);
   const [colorMap, setColorMap] = useState<Record<string, string>>({});
-  // const [selectedTexture,setSelectedTexture]=useState<number>()
+  const [selectedTexture, setSelectedTexture] = useState<number>(0);
   const textureImages = [
     "/textures/texture-1.jpg",
     "/textures/texture-2.jpg",
@@ -56,6 +56,7 @@ const Scene = ({ modelUrl }: Props) => {
               modelUrl={modelUrl}
               colorMap={colorMap}
               onMaterialsLoaded={setMaterialNames}
+              selectedTexture={textureImages[selectedTexture]}
             />
 
             <OrbitControls
@@ -93,9 +94,14 @@ const Scene = ({ modelUrl }: Props) => {
       <div className="absolute flex-col  bottom-5 right-1/2 translate-x-[50%] z-50 px-3">
         <p className="text-lg font-semibold text-center">select any texture</p>
         <div className="flex gap-x-3 mt-1 justify-center">
-          {textureImages.map((texture) => {
+          {textureImages.map((texture, index) => {
             return (
-              <div className="flex hover:outline-amber-400 hover:outline-2">
+              <div
+                onClick={() => {
+                  setSelectedTexture(index);
+                }}
+                className="flex hover:outline-amber-400 hover:outline-2"
+              >
                 <img src={`${texture}`} alt={texture} className="w-20 h-20" />
               </div>
             );

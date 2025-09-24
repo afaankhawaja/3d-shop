@@ -1,25 +1,41 @@
 import { useRef, useEffect, useMemo } from "react";
 import { useThree } from "@react-three/fiber";
-import { useGLTF } from "@react-three/drei";
-import { Box3, Vector3, Object3D, PerspectiveCamera, Material } from "three";
+import { useGLTF, useTexture } from "@react-three/drei";
+import {
+  Box3,
+  Vector3,
+  Object3D,
+  PerspectiveCamera,
+  Material,
+  Mesh,
+} from "three";
 
 interface Props {
   modelUrl: string;
   colorMap?: Record<string, string>;
   onMaterialsLoaded?: (materialNames: string[]) => void;
+  selectedTexture: string;
 }
 
 const SceneContent = ({
   modelUrl,
   colorMap = {},
   onMaterialsLoaded,
+  selectedTexture,
 }: Props) => {
   const { scene, materials } = useGLTF(modelUrl);
   const modelRef = useRef<Object3D>(null);
   const { camera } = useThree();
+  const texture = useTexture(selectedTexture);
 
   const materialNames = useMemo(() => Object.keys(materials), [materials]);
   useEffect(() => {
+    scene.traverse((child) => {
+      if (child instanceof Mesh) {
+        child.material.map = texture;
+        child.material.needsUpdate = true;
+      }
+    });
     if (onMaterialsLoaded && materialNames.length > 0) {
       onMaterialsLoaded(materialNames);
     }
@@ -54,7 +70,15 @@ const SceneContent = ({
 
     camera.position.set(0, 0, distance * 1.2);
     (camera as PerspectiveCamera).updateProjectionMatrix();
-  }, [scene, camera, colorMap, materialNames, onMaterialsLoaded, materials]);
+  }, [
+    scene,
+    camera,
+    colorMap,
+    materialNames,
+    onMaterialsLoaded,
+    materials,
+    selectedTexture,
+  ]);
 
   return <primitive ref={modelRef} object={scene} />;
 };
