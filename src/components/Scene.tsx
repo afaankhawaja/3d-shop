@@ -15,6 +15,13 @@ function Loader() {
 const Scene = ({ modelUrl }: Props) => {
   const [materialNames, setMaterialNames] = useState<string[]>([]);
   const [colorMap, setColorMap] = useState<Record<string, string>>({});
+  // const [selectedTexture,setSelectedTexture]=useState<number>()
+  const textureImages = [
+    "/textures/texture-1.jpg",
+    "/textures/texture-2.jpg",
+    "/textures/texture-3.jpg",
+    "/textures/texture-4.jpg",
+  ];
   const handleColorChange = (material: string, color: string) => {
     setColorMap((prev) => ({ ...prev, [material]: color }));
   };
@@ -60,12 +67,12 @@ const Scene = ({ modelUrl }: Props) => {
           </Suspense>
         </Canvas>
       </div>
-      <div className="absolute  bottom-3 left-0 right-0 z-50 px-3">
-        <div className="flex space-x-4  overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-[#AB886D] scrollbar-track-[#E4E0E1]">
+      <div className="absolute top-18 right-1/2 translate-x-[50%] z-50 px-3">
+        <div className="flex space-x-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-[#AB886D] scrollbar-track-[#E4E0E1]">
           {materialNames.map((name) => (
             <div
               key={name}
-              className="bg-[#E4E0E1] shadow-md rounded-xl flex-shrink-0 w-28 p-2 flex flex-col items-center gap-2 hover:shadow-lg transition"
+              className="bg-[#E4E0E1] shadow-md rounded-xl flex-shrink-0 w-10 md:w-20 p-2 flex flex-col items-center gap-2 hover:shadow-lg transition"
             >
               <label
                 className="text-center text-xs font-medium text-[#493628] truncate w-full"
@@ -81,6 +88,18 @@ const Scene = ({ modelUrl }: Props) => {
               />
             </div>
           ))}
+        </div>
+      </div>
+      <div className="absolute flex-col  bottom-5 right-1/2 translate-x-[50%] z-50 px-3">
+        <p className="text-lg font-semibold text-center">select any texture</p>
+        <div className="flex gap-x-3 mt-1 justify-center">
+          {textureImages.map((texture) => {
+            return (
+              <div className="flex hover:outline-amber-400 hover:outline-2">
+                <img src={`${texture}`} alt={texture} className="w-20 h-20" />
+              </div>
+            );
+          })}
         </div>
       </div>
     </>

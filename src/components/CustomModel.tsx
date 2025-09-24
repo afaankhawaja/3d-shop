@@ -74,7 +74,7 @@ const CustomModal: React.FC<CustomModalProps> = ({
         {/* Header */}
         <div
           style={{
-            padding: "16px 20px",
+            padding: "10px 20px",
             borderBottom: "1px solid #e5e7eb",
             display: "flex",
             alignItems: "center",
